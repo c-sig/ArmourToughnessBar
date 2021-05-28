@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "armourtoughnessbar",
+  "version": "${version}",
+  "name": "ArmourToughnessBar",
+  "description": "",
+  "authors": [ "pbone" ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/ArmourToughnessBar/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "dev.pbone.armourtoughnessbar.client.ArmourToughnessBarClient"
+    ],
+    "main": [
+      "dev.pbone.armourtoughnessbar.ArmourToughnessBar"
+    ]
+  },
+  "mixins": [
+    "ArmourToughnessBar.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.16.5"
+  },
+  "custom": {
+    "modmenu": {
+      "badges": [ "client" ]
+    }
+  }
+}

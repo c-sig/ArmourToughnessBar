@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "dev.pbone.armourtoughnessbar.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+  ],
+  "client": [
+    "ToughnessBarMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
