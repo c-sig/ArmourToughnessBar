@@ -40,24 +40,28 @@ public abstract class ToughnessBarMixin extends DrawableHelper {
         int cappedAir = Math.min(playerEntity.getAir(), airMax);
         int yModifier = playerEntity.isSubmergedIn(FluidTags.WATER) || cappedAir < airMax ? 10 : 0;
         int origY = scaledScaledHeight - yModifier - 10;
-        // I don't know why, but I have to add two for this to work properly
-        int armorToughness = (int)playerEntity.getAttributeValue(EntityAttributes.GENERIC_ARMOR_TOUGHNESS) + 2;
+        int armorToughness = (int) playerEntity.getAttributeValue(EntityAttributes.GENERIC_ARMOR_TOUGHNESS);
 
-        int origX;
-        for(int i = 10; i > 0; i--) {
-            if (armorToughness > 0) {
-                origX = scaledScaledWidth - i * 8;
+        if (armorToughness > 0) {
+            // I don't know why, but I have to add two for this to work properly
+            armorToughness += 2;
+            int origX;
 
-                if (i * 2 + 1 < armorToughness) {
-                    this.drawTexture(matrices, origX, origY, 18, 0, 9, 9);
-                }
+            for (int i = 10; i > 0; i--) {
+                if (armorToughness > 0) {
+                    origX = scaledScaledWidth - i * 8;
 
-                if (i * 2 + 1 == armorToughness) {
-                    this.drawTexture(matrices, origX, origY, 9, 0, 9, 9);
-                }
+                    if (i * 2 + 1 < armorToughness) {
+                        this.drawTexture(matrices, origX, origY, 18, 0, 9, 9);
+                    }
 
-                if (i * 2 + 1 > armorToughness) {
-                    this.drawTexture(matrices, origX, origY, 0, 0, 9, 9);
+                    if (i * 2 + 1 == armorToughness) {
+                        this.drawTexture(matrices, origX, origY, 9, 0, 9, 9);
+                    }
+
+                    if (i * 2 + 1 > armorToughness) {
+                        this.drawTexture(matrices, origX, origY, 0, 0, 9, 9);
+                    }
                 }
             }
         }
