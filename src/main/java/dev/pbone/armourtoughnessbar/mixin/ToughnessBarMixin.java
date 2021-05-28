@@ -1,6 +1,6 @@
 package dev.pbone.armourtoughnessbar.mixin;
 
-import dev.pbone.armourtoughnessbar.ArmourToughnessBar;
+import dev.pbone.armourtoughnessbar.client.ArmourToughnessBarClient;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.DrawableHelper;
 import net.minecraft.client.gui.hud.InGameHud;
@@ -18,7 +18,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(InGameHud.class)
 public abstract class ToughnessBarMixin extends DrawableHelper {
-    private static final Identifier ICONS = new Identifier(ArmourToughnessBar.MOD_ID, "textures/gui/icons.png");
+    private static final Identifier ICONS = new Identifier(ArmourToughnessBarClient.MOD_ID, "textures/gui/icons.png");
 
     @Shadow private int scaledWidth;
 
