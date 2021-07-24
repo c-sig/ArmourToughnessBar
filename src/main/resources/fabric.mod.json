@@ -4,7 +4,7 @@
   "version": "${version}",
   "name": "ArmourToughnessBar",
   "description": "Adds a small bar to the HUD to display your armour toughness. Just something I thought was cool.",
-  "authors": [ "pbone" ],
+  "authors": [ "pbone, csig" ],
   "contact": {},
   "license": "MIT",
   "icon": "assets/armourtoughnessbar/icon.png",
@@ -18,8 +18,8 @@
     "ArmourToughnessBar.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.11.3",
+    "fabricloader": ">=0.11.6",
     "fabric": "*",
-    "minecraft": "1.16.5"
+    "minecraft": "1.17.1"
   }
 }
